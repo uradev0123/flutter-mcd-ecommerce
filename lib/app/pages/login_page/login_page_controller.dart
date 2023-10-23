@@ -1,23 +1,20 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginPageController extends GetxController {
-  //TODO: Implement LandingPageController
+  // Menambahkan formKey
+  final formKey = GlobalKey<FormState>();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final RxString email = ''.obs;
+  final RxString password = ''.obs;
+
+  void setEmail(String value) => email.value = value;
+  void setPassword(String value) => password.value = value;
+
+  void handleLogin() {
+    if (formKey.currentState?.validate() ?? false) {
+      // Logika untuk memeriksa email dan password, kemudian melakukan login
+      print('Email: ${email.value}, Password: ${password.value}');
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
