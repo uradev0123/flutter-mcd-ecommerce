@@ -12,11 +12,12 @@ class HomeComponentOne extends StatelessWidget {
     final double width = mediaQuery.width;
     final double height = mediaQuery.height;
 
-    return Container(
-      width: width,
-      color: primaryColor,
-      padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.03),
-      child: Container(
+    return AppBar(
+      backgroundColor: primaryColor,
+      elevation: 0,
+      toolbarHeight: height * 0.1,
+      title: Container(
+        padding: EdgeInsets.symmetric(horizontal: width * 0.01),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -26,7 +27,7 @@ class HomeComponentOne extends StatelessWidget {
                 Container(
                   width: width * 0.1,
                   height: width * 0.1,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: secondaryColor,
                     shape: BoxShape.circle,
                   ),
@@ -37,27 +38,24 @@ class HomeComponentOne extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 SizedBox(width: width * 0.03),
-
                 Text(
                   "McDonald's Plus",
                   style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          color: whiteColor,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20
-                      )
+                    textStyle: TextStyle(
+                      color: whiteColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ],
             ),
-
             /// Icon Cart
             Container(
               width: width * 0.1,
               height: width * 0.1,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: whiteColor,
                 shape: BoxShape.circle,
               ),
@@ -65,7 +63,7 @@ class HomeComponentOne extends StatelessWidget {
                 Icons.shopping_cart,
                 color: blackColor,
               ),
-            )
+            ),
           ],
         ),
       ),
