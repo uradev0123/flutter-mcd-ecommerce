@@ -16,7 +16,7 @@ TextStyle ts24SemiboldBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
         fontWeight: FontWeight.w600,
-        fontSize: 22
+        fontSize: 24
     )
 );
 
@@ -24,7 +24,7 @@ TextStyle ts16SemiboldWhite = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: whiteColor,
         fontWeight: FontWeight.w600,
-        fontSize: 14
+        fontSize: 16
     )
 );
 
@@ -32,11 +32,19 @@ TextStyle ts16SemiboldBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
         fontWeight: FontWeight.w600,
-        fontSize: 14
+        fontSize: 16
     )
 );
 
 TextStyle ts14MediumBlack = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14
+    )
+);
+
+TextStyle ts12MediumBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
         fontWeight: FontWeight.w500,
@@ -48,6 +56,22 @@ TextStyle ts12SemiboldGrey = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: greyColor,
         fontWeight: FontWeight.w600,
+        fontSize: 12
+    )
+);
+
+TextStyle ts10MediumGrey = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: greyColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 10,
+    )
+);
+
+TextStyle ts10SemiboldBlack = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w600,
         fontSize: 10
     )
 );
@@ -56,8 +80,10 @@ TextStyle ts10SemiboldGrey = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: greyColor,
         fontWeight: FontWeight.w600,
-        fontSize: 8
+        fontSize: 10
     )
 );
+
+
 
 
