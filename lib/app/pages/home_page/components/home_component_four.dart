@@ -28,7 +28,7 @@ class HomeComponentFour extends StatelessWidget {
 
         SizedBox(height: height * 0.025),
 
-        cardProductHomePage(context: context, controller: recommendedController),
+        cardProductHomePage(context: context, controller: recommendedController.recommended),
       ],
     );
   }
