@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:web_pancasila_aceh/app/mock_data/model/product.dart';
 
-class BurgerController extends GetxController {
+class ChickenController extends GetxController {
   var chicken = <Product>[].obs;
 
   @override
