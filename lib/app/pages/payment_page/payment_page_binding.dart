@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:web_pancasila_aceh/app/pages/payment_page/payment_page_controller.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_controller.dart';
 
 
 class PaymentPageBinding extends Bindings {

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class HomePageController extends GetxController {
-  //TODO: Implement LandingPageController
 
   final count = 0.obs;
   @override

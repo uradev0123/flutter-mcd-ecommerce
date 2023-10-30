@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:web_pancasila_aceh/app/pages/home_page/home_page_controller.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 
 
 class HomePageBinding extends Bindings {

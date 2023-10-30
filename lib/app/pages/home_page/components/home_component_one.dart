@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:web_pancasila_aceh/common/helper/themes.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HomeComponentOne extends StatelessWidget {
   const HomeComponentOne({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class HomeComponentOne extends StatelessWidget {
                 Container(
                   width: width * 0.1,
                   height: width * 0.1,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: secondaryColor,
                     shape: BoxShape.circle,
                   ),
@@ -42,7 +41,7 @@ class HomeComponentOne extends StatelessWidget {
                 Text(
                   "McDonald's Plus",
                   style: GoogleFonts.poppins(
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       color: whiteColor,
                       fontWeight: FontWeight.w600,
                       fontSize: 20,
@@ -55,11 +54,11 @@ class HomeComponentOne extends StatelessWidget {
             Container(
               width: width * 0.1,
               height: width * 0.1,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: whiteColor,
                 shape: BoxShape.circle,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.shopping_cart,
                 color: blackColor,
               ),

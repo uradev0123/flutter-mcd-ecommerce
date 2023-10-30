@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:web_pancasila_aceh/app/mock_data/controller/burger.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/controller/burger.dart';
 
 class MenuPageView extends StatelessWidget {
   final BurgerController burgerController = Get.put(BurgerController());
