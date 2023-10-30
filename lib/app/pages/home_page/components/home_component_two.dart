@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:web_pancasila_aceh/common/helper/themes.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HomeComponentTwo extends StatelessWidget {
   const HomeComponentTwo({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class HomeComponentTwo extends StatelessWidget {
               padding: EdgeInsets.all(width * 0.03),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(width: width * 0.002, color: Color(0xFFCCCCCC))
+                border: Border.all(width: width * 0.002, color: const Color(0xFFCCCCCC))
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
