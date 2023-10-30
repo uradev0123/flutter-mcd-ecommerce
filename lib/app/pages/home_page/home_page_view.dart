@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_pancasila_aceh/app/pages/home_page/components/home_component_five.dart';
 import 'package:web_pancasila_aceh/app/pages/home_page/components/home_component_four.dart';
 import 'package:web_pancasila_aceh/app/pages/home_page/components/home_component_one.dart';
 import 'package:web_pancasila_aceh/app/pages/home_page/components/home_component_three.dart';
@@ -22,6 +23,7 @@ class HomePageView extends StatelessWidget {
               HomeComponentTwo(),
               HomeComponentThree(),
               HomeComponentFour(),
+              HomeComponentFive(),
             ],
           ),
         ),
