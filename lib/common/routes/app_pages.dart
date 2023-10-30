@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:web_pancasila_aceh/app/pages/cart_page/cart_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/cart_page/cart_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/history_page/history_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/history_page/history_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/home_page/home_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/home_page/home_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/login_page/login_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/login_page/login_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/menu_page/menu_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/menu_page/menu_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/profile_page/profile_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/profile_page/profile_page_view.dart';
-import 'package:web_pancasila_aceh/app/pages/signup_page/signup_page_binding.dart';
-import 'package:web_pancasila_aceh/app/pages/signup_page/signup_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/history_page/history_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/history_page/history_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/login_page/login_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/login_page/login_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/profile_page/profile_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/profile_page/profile_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_view.dart';
 
 
 part 'app_routes.dart';
