@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
-import 'package:web_pancasila_aceh/app/mock_data/controller/recommended.dart';
-import 'package:web_pancasila_aceh/app/pages/home_page/widgets/card_product_home_page.dart';
-import 'package:web_pancasila_aceh/common/helper/themes.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/controller/recommended.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/card_product_home_page.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HomeComponentFour extends StatelessWidget {
   final RecommendedController recommendedController = Get.put(RecommendedController());

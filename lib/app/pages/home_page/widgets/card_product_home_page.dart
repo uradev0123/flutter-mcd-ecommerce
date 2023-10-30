@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -26,7 +25,7 @@ Widget cardProductHomePage ({required context, required controller,}) {
             decoration: BoxDecoration(
               color: whiteColor,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
                   blurRadius: 4,
@@ -70,7 +69,7 @@ Widget cardProductHomePage ({required context, required controller,}) {
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(Icons.add, size: 20,),
+                  child: const Icon(Icons.add, size: 20,),
                 ),
               ],
             ),

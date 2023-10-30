@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:web_pancasila_aceh/app/mock_data/model/product.dart';
+import 'package:flutter_mcd_ecommerce/app/mock_data/model/product.dart';
 
 class DrinkController extends GetxController {
   var drink = <Product>[].obs;
