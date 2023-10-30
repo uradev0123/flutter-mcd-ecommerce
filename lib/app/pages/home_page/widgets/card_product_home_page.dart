@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 
 import '../../../../common/helper/themes.dart';
 
-Widget cardProductHomePage ({required context, required controller}) {
+Widget cardProductHomePage ({required context, required controller,}) {
   final Size mediaQuery = MediaQuery.of(context).size;
   final double width = mediaQuery.width;
   final double height = mediaQuery.height;
@@ -14,10 +14,10 @@ Widget cardProductHomePage ({required context, required controller}) {
       height: height * 0.295,
       margin: EdgeInsets.only(left: width * 0.05),
       child: ListView.builder(
-        itemCount: controller.recommended.length,
+        itemCount: controller.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          var product = controller.recommended[index];
+          var product = controller[index];
           var formattedPrice = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ').format(product.price);
           formattedPrice = formattedPrice.replaceAll(",00", "");
           return Container(
