@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/burger.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_five.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_four.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_one.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_three.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_two.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/components/menu_component_one.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/components/menu_component_two.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class MenuPageView extends StatelessWidget {
-  final BurgerController burgerController = Get.put(BurgerController());
+  const MenuPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: Obx(() => Container(
-        child: ListView.builder(
-          itemCount: burgerController.burger.length,
-          itemBuilder: (BuildContext context, int index) {
-            var burger = burgerController.burger[index];
-            return Container(
-              child: Column(
-                children: [
-                  Text(burger.name + burger.image),
-                  Text("Rp. " + burger.price.toString())
-                ],
-              ),
-            );
-          },
-        )
-      )),
+      backgroundColor: backgroundPageColor,
+      body: Container(
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              MenuComponentOne(),
+              MenuComponentTwo(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
