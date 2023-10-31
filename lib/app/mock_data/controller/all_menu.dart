@@ -31,7 +31,7 @@ class AllMenuController extends GetxController {
     Product drink4 = Product("drink_fanta_mcfloat", "Fanta Float", 15000);
     Product drink5 = Product("drink_fruit_tea_blackcurrant", "Fruit Tea Blackcurrant", 9500);
     Product drink6 = Product("drink_fruit_tea_lemon", "Fruit Tea Lemon", 1400);
-    Product drink7 = Product("drink_hot_coffee", "Hot Coffee", 1200);
+    Product drink7 = Product("drink_hot_coffee", "Hot Coffee", 12000);
     Product drink8 = Product("drink_iced_milo", "Milo", 21500);
     Product dessert1 = Product("dessert_chocolate_sundae", "Chocolate Sundae", 12000);
     Product dessert2 = Product("dessert_mcflurry_choco", "Mcflurry Choco", 14000);
@@ -40,5 +40,7 @@ class AllMenuController extends GetxController {
     Product dessert5 = Product("dessert_apple_pie", "Apple Pie", 12500);
 
     allMenu.addAll([burger1, burger2, burger3, burger4, burger5, burger6, burger7, burger8, burger9, burger10, burger11, chicken1, chicken2, chicken3, chicken4, chicken5, chicken6, chicken7, drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, dessert1, dessert2, dessert3, dessert4, dessert5]);
+
+    allMenu.shuffle();
   }
 }
