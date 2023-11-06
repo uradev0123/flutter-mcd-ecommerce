@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class CartPageView extends StatelessWidget {
   const CartPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final Size mediaQuery = MediaQuery.of(context).size;
+    final double width = mediaQuery.width;
+    final double height = mediaQuery.height;
 
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: height * 0.09,
+        title: Text('Cart', style: ts18SemiboldBlack),
+      ),
     );
   }
 }
