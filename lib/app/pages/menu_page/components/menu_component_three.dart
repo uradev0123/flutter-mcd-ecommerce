@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/all_menu.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/breakfast.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/burger.dart';
 import 'package:flutter_mcd_ecommerce/app/mock_data/controller/category_menu.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/chicken.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/dessert.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/drink.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
-import 'package:flutter_mcd_ecommerce/app/pages/menu_page/widgets/grid_view_product.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,12 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MenuComponentThree extends StatelessWidget {
   final MenuPageController controller = Get.put(MenuPageController());
   final CategoryMenuController categoryMenuController = Get.put(CategoryMenuController());
-  final AllMenuController allMenuController = Get.put(AllMenuController());
-  final BurgerController burgerController = Get.put(BurgerController());
-  final ChickenController chickenController = Get.put(ChickenController());
-  final DrinkController drinkController = Get.put(DrinkController());
-  final DessertController dessertController = Get.put(DessertController());
-  final BreakfastController breakfastController = Get.put(BreakfastController());
+
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +74,7 @@ class MenuComponentThree extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: height * 0.05),
+          SizedBox(height: height * 0.03),
           controller.getMenuControllerWidget(context: context),
         ],
       );
