@@ -7,16 +7,16 @@ class RecommendedController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    Product recommended1 = Product("burger_cheeseburger", "Cheeseburger", 32000);
-    Product recommended2 = Product("burger_chicken_burger_deluxe", "Chicken Super Burger Deluxe", 25000);
-    Product recommended3 = Product("chicken_mcnuggets", "Mcnuggets", 26000);
-    Product recommended4 = Product("dessert_mcflurry_feat._oreo", "Mcflurry Feat. Oreo", 14000);
-    Product recommended5 = Product("burger_big_mac", "Big Mac", 41000);
-    Product recommended6 = Product("burger_chicken_burger", "Chicken Burger", 22500);
-    Product recommended7 = Product("burger_double_cheeseburger", "Double Cheeseburger", 39500);
-    Product recommended8 = Product("chicken_ayam_spicy_mcdonald's", "1pc Spicy Chicken", 24000);
-    Product recommended9 = Product("chicken_ayam_krispy_mcdonald's", "1pc Krispy Chicken", 24000);
+    Product burger4 = Product("burger-4", "burger_cheeseburger", "Cheeseburger", 32000);
+    Product burger7 = Product("burger-7", "burger_chicken_burger_deluxe", "Chicken Burger Deluxe", 25000);
+    Product chicken8 = Product("chicken-8", "chicken_mcnuggets", "Chicken McNuggets", 38500);
+    Product dessert3 = Product("dessert-3", "dessert_mcflurry_feat._oreo", "Mcflurry Feat. Oreo", 14000);
+    Product burger3 = Product("burger-3", "burger_big_mac", "Big Mac", 41000);
+    Product burger6 = Product("burger-6", "burger_chicken_burger", "Chicken Burger", 22500);
+    Product burger8 = Product("burger-8", "burger_double_cheeseburger", "Double Cheeseburger", 39500);
+    Product chicken1 = Product("chicken-1", "chicken_ayam_krispy_mcdonald's", "1pc Krispy Chicken", 24000);
+    Product chicken2 = Product("chicken-2", "chicken_ayam_spicy_mcdonald's", "1pc Spicy Chicken", 24000);
 
-    recommended.addAll([recommended1, recommended2, recommended3, recommended4, recommended5, recommended6, recommended7, recommended8, recommended9]);
+    recommended.addAll([burger4, burger7, chicken8, dessert3, burger3, burger6, burger8, chicken1, chicken2]);
   }
 }
