@@ -2,7 +2,7 @@ import 'package:flutter_mcd_ecommerce/app/mock_data/model/category.dart';
 import 'package:get/get.dart';
 
 class CategoryMenuController extends GetxController {
-  var categoryMenu = <CategoryModel>[].obs;
+  RxList<CategoryModel> categoryMenu = <CategoryModel>[].obs;
 
   @override
   void onInit() {
