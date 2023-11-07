@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_mcd_ecommerce/app/mock_data/controller/breakfast.dart';
 
 class CartComponentOne extends StatelessWidget {
 
@@ -63,6 +61,7 @@ class CartComponentOne extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SvgPicture.asset('assets/icons/icon_add_notes.svg'),
+                SizedBox(width: width * 0.01),
                 Text('Notes', style: ts12SemiboldBlack),
               ],
             )
