@@ -86,6 +86,8 @@ Widget gridViewProduct({required context, required controller}) {
                               ElevatedButton(
                                 onPressed: () {
                                   cartController.decrementProductQuantity(product);
+                                  cartController.calculateSubTotalPrice();
+                                  cartController.calculateSubTotalPrice();
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -100,6 +102,8 @@ Widget gridViewProduct({required context, required controller}) {
                               ElevatedButton(
                                 onPressed: () {
                                   cartController.incrementProductQuantity(product);
+                                  cartController.calculateSubTotalPrice();
+                                  cartController.calculateSubTotalPrice();
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -118,6 +122,8 @@ Widget gridViewProduct({required context, required controller}) {
                             onPressed: () {
                               cartController.addToSelectedProducts(product.id);
                               cartController.incrementProductQuantity(product);
+                              cartController.calculateSubTotalPrice();
+                              cartController.calculateSubTotalPrice();
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
