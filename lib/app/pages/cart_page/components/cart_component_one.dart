@@ -12,7 +12,7 @@ class CartComponentOne extends StatelessWidget {
     final double height = mediaQuery.height;
 
     return Container(
-      color: whiteColor,
+      color: Colors.white,
       height: height * 0.2,
       padding: EdgeInsets.symmetric(horizontal: width * 0.05),
       child: Column(
