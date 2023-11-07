@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter_mcd_ecommerce/app/mock_data/model/product.dart';
 
 class AllMenuController extends GetxController {
-  var allMenu = <Product>[].obs;
+  RxList<Product> allMenu = <Product>[].obs;
 
   @override
   void onInit() {
@@ -39,8 +39,17 @@ class AllMenuController extends GetxController {
     Product dessert3 = Product("dessert-3", "dessert_mcflurry_feat._oreo", "Mcflurry Feat. Oreo", 14000);
     Product dessert4 = Product("dessert-4", "dessert_strawberry_sundae", "Strawberry Sundae", 12000);
     Product dessert5 = Product("dessert-5", "dessert_apple_pie", "Apple Pie", 12500);
+    Product breakfast1 = Product("breakfast-1", "breakfast_egg_mcmuffin", "Egg McMuffin", 28000);
+    Product breakfast2 = Product("breakfast-2", "breakfast_egg_and_cheese_muffin", "Egg & Cheese Muffin", 19000);
+    Product breakfast3 = Product("breakfast-3", "breakfast_chicken_muffin", "Chicken McMuffin", 27500);
+    Product breakfast4 = Product("breakfast-4", "breakfast_chicken_muffin_with_egg", "Chicken McMuffin with Egg", 32000);
+    Product breakfast5 = Product("breakfast-5", "breakfast_sausage_mcmuffin", "Sausage McMuffin", 29500);
+    Product breakfast6 = Product("breakfast-6", "breakfast_sausage_mcmuffin_with_egg", "Sausage McMuffin with Egg", 33000);
+    Product breakfast7 = Product("breakfast-7", "breakfast_hashbrown", "HashBrown", 13500);
+    Product breakfast8 = Product("breakfast-8", "breakfast_big_breakfast", "Big Breakfast", 39500);
+    Product breakfast9 = Product("breakfast-9", "breakfast_bubur_ayam_mcd", "McD Chicken Porridge", 15000);
 
-    allMenu.addAll([burger1, burger2, burger3, burger4, burger5, burger6, burger7, burger8, burger9, burger10, burger11, chicken1, chicken2, chicken3, chicken4, chicken5, chicken6, chicken7, chicken8, drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, dessert1, dessert2, dessert3, dessert4, dessert5]);
+    allMenu.addAll([burger1, burger2, burger3, burger4, burger5, burger6, burger7, burger8, burger9, burger10, burger11, chicken1, chicken2, chicken3, chicken4, chicken5, chicken6, chicken7, chicken8, drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, dessert1, dessert2, dessert3, dessert4, dessert5, breakfast1, breakfast2, breakfast3, breakfast4, breakfast5, breakfast6, breakfast7, breakfast8, breakfast9]);
 
     allMenu.shuffle();
   }

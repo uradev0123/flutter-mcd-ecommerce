@@ -14,7 +14,9 @@ Widget gridViewProduct({required context, required controller}) {
 
   return Container(
       height: height,
-      margin: EdgeInsets.symmetric(horizontal: width * 0.05,),
+      margin: EdgeInsets.symmetric(
+        horizontal: width * 0.05,
+      ),
       child: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: width * 0.45,
@@ -24,11 +26,12 @@ Widget gridViewProduct({required context, required controller}) {
             mainAxisSpacing: 20),
         children: List.generate(controller.length, (index) {
           var product = controller[index];
-          var formattedPrice = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ').format(product.price);
+          var formattedPrice =
+          NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ').format(product.price);
           formattedPrice = formattedPrice.replaceAll(",00", "");
 
           return Obx(() {
-            bool isSelected = cartController.selectedProductIndex.value == index;
+            bool isSelected = cartController.isProductSelected(product.id);
             return Container(
               decoration: BoxDecoration(
                 color: whiteColor,
@@ -42,8 +45,8 @@ Widget gridViewProduct({required context, required controller}) {
                   )
                 ],
                 border: Border.all(
-                  color: isSelected ? Colors.yellow : Colors.transparent,
-                  width: 3,
+                  color: isSelected ? primaryColor : Colors.transparent,
+                  width: 5,
                 ),
               ),
               child: Column(
@@ -63,7 +66,8 @@ Widget gridViewProduct({required context, required controller}) {
                               height: height * 0.055,
                               child: Align(
                                 alignment: Alignment.bottomLeft,
-                                child: Text(product.name, style: ts14MediumBlack),
+                                child:
+                                    Text(product.name, style: ts14MediumBlack),
                               ),
                             ),
                             SizedBox(height: height * 0.005),
@@ -73,29 +77,61 @@ Widget gridViewProduct({required context, required controller}) {
                       ),
                     ],
                   ),
-                  Container(
-                    height: height * 0.035,
-                    width: double.infinity,
-                    margin: EdgeInsets.all(width * 0.015),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        cartController.selectedProductIndex.value = index;
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                  isSelected
+                      ? Container(
+                        margin: EdgeInsets.all(width * 0.015),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  cartController.decrementProductQuantity(product);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  backgroundColor: primaryColor,
+                                ),
+                                child: Icon(Icons.remove, color: blackColor),
+                              ),
+                              Container(
+                                margin: EdgeInsets.symmetric(horizontal: width * 0.005),
+                                child: Text(product.quantity.toString(), style: ts14MediumBlack),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  cartController.incrementProductQuantity(product);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  backgroundColor: primaryColor,
+                                ),
+                                child: Icon(Icons.add, color: blackColor),
+                              ),
+                            ],
+                          ),
+                      )
+                      : Container(
+                          height: height * 0.035,
+                          width: double.infinity,
+                          margin: EdgeInsets.all(width * 0.015),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              cartController.addToSelectedProducts(product.id);
+                              cartController.incrementProductQuantity(product);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: primaryColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Icon(Icons.add, size: 20, color: blackColor),
+                          ),
                         ),
-                      ),
-                      child: Icon(Icons.add, size: 20, color: blackColor),
-                    ),
-                  ),
                 ],
               ),
             );
           });
-
         }),
-      )
-  );
+      ));
 }
