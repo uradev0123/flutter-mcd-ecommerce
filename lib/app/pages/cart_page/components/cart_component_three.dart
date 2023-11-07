@@ -16,10 +16,9 @@ class CartComponentThree extends StatelessWidget {
     cartController.calculateTotalPrice();
 
     return Obx(() => Container(
-      height: height * 0.5,
       width: double.infinity,
       color: Colors.white,
-      padding: EdgeInsets.only(left: width * 0.05, right: width * 0.05, top: height * 0.02, bottom: height * 0.3),
+      padding: EdgeInsets.only(left: width * 0.05, right: width * 0.05, top: height * 0.02, bottom: height * 0.2),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
