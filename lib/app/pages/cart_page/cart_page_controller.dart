@@ -1,11 +1,31 @@
+import 'package:flutter_mcd_ecommerce/app/mock_data/model/product.dart';
 import 'package:get/get.dart';
 
 class CartPageController extends GetxController {
-  RxInt selectedProductIndex = 10000000.obs;
-  RxBool isSelected = false.obs;
+  RxList<String> selectedProductIds = <String>[].obs;
 
-  final count = 0.obs;
+  void addToSelectedProducts(String productId) {
+    selectedProductIds.add(productId);
+  }
 
-  void increment() => count.value++;
-  void decrement() => count.value--;
+  void removeFromSelectedProducts(String productId) {
+    selectedProductIds.remove(productId);
+  }
+
+  bool isProductSelected(String productId) {
+    return selectedProductIds.contains(productId);
+  }
+
+  void incrementProductQuantity(Product product) {
+    product.quantity++;
+  }
+
+  void decrementProductQuantity(Product product) {
+    if (product.quantity > 0) {
+      product.quantity--;
+      if (product.quantity == 0) {
+        removeFromSelectedProducts(product.id as String);
+      }
+    }
+  }
 }
