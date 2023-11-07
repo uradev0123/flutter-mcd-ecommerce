@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_one.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_two.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class CartPageView extends StatelessWidget {
@@ -24,6 +25,7 @@ class CartPageView extends StatelessWidget {
           child: Column(
             children: [
               CartComponentOne(),
+              CartComponentTwo(),
             ],
           ),
         ),

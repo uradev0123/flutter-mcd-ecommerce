@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_mcd_ecommerce/app/mock_data/controller/breakfast.dart';
 
 class CartComponentOne extends StatelessWidget {
-  final BreakfastController breakfastController = Get.put(BreakfastController());
 
   @override
   Widget build(BuildContext context) {
