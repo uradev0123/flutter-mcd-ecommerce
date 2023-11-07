@@ -28,7 +28,7 @@ class CartComponentTwo extends StatelessWidget {
             return Container(
               height: height * 0.125,
               width: double.infinity,
-              color: whiteColor,
+              color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.01),
               margin: EdgeInsets.only(bottom: height * 0.005),
               child: Row(
@@ -66,6 +66,8 @@ class CartComponentTwo extends StatelessWidget {
                           onPressed: () {
                             cartController.decrementProductQuantity(product);
                             cartController.findAndAddSelectedProducts();
+                            cartController.calculateSubTotalPrice();
+                            cartController.calculateTotalPrice();
                           },
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
@@ -81,6 +83,8 @@ class CartComponentTwo extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             cartController.incrementProductQuantity(product);
+                            cartController.calculateSubTotalPrice();
+                            cartController.calculateTotalPrice();
                           },
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
