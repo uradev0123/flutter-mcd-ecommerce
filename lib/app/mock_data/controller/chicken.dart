@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter_mcd_ecommerce/app/mock_data/model/product.dart';
 
 class ChickenController extends GetxController {
-  var chicken = <Product>[].obs;
+  RxList<Product> chicken = <Product>[].obs;
 
   @override
   void onInit() {
