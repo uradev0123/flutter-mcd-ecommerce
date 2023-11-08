@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/global_component/container_total.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_controller.dart';
-import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_four.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/payment_page/widgets/radio_button_payment.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/payment_page/widgets/text_category_payment.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
@@ -47,7 +47,7 @@ class PaymentPageView extends StatelessWidget {
               ),
             ),
           ),
-          CartComponentFour(),
+          ContainerTotal(context: context, textValue: 'Order Now', route: '/', isOffNamed: true)
         ],
       ),
     );
