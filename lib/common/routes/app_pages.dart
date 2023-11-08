@@ -1,3 +1,5 @@
+import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_binding.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_view.dart';
@@ -20,7 +22,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MENU_PAGE;
+  static const INITIAL = Routes.PAYMENT_PAGE;
 
   static final routes = [
     GetPage(
@@ -63,6 +65,12 @@ class AppPages {
         name: _Paths.CART_PAGE,
         page: () => CartPageView(),
         binding: CartPageBinding(),
+        transition: Transition.noTransition
+    ),
+    GetPage(
+        name: _Paths.PAYMENT_PAGE,
+        page: () => PaymentPageView(),
+        binding: PaymentPageBinding(),
         transition: Transition.noTransition
     ),
   ];
