@@ -60,6 +60,14 @@ TextStyle ts16SemiboldBlack = GoogleFonts.poppins(
     )
 );
 
+TextStyle ts14SemiboldBlack = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: blackColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 14
+    )
+);
+
 TextStyle ts14MediumBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
