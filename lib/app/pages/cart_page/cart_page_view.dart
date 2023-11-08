@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/global_component/container_total.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_controller.dart';
-import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_four.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_one.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_three.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/components/cart_component_two.dart';
@@ -41,7 +41,7 @@ class CartPageView extends StatelessWidget {
               ),
             ),
           ),
-          CartComponentFour(),
+          ContainerTotal(context: context, textValue: 'Checkout', route: '/payment', isOffNamed: false)
         ],
       ),
     );
