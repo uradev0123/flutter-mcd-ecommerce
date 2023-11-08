@@ -2,21 +2,10 @@ import 'package:get/get.dart';
 
 class PaymentPageController extends GetxController {
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final RxString orderType = "0".obs;
+  RxString get orderTypeString => orderType;
+  void setOrderType(String type) {
+    orderType.value = type;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
