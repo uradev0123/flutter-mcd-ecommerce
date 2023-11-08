@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/global_component/navbar.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ void main() {
       ),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      home: Navbar(),
     ),
   );
 }
