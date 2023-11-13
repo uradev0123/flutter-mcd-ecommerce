@@ -18,18 +18,35 @@ class HomeComponentThree extends StatelessWidget {
           height: height * 0.04,
         ),
         Container(
+          width: width,
           height: height * 0.08,
           decoration: const ShapeDecoration(
-              color: primaryColor,
-              shape: OvalBorder()
+            color: primaryColor,
+            shape: OvalBorder(),
           ),
         ),
         Row(
           children: [
-            menuCircleRed(context: context, pathImage: "dessert", textValue: "Dessert", isDown: false),
-            menuCircleRed(context: context, pathImage: "burger", textValue: "Burger", isDown: true),
-            menuCircleRed(context: context, pathImage: "chicken", textValue: "Chicken", isDown: true),
-            menuCircleRed(context: context, pathImage: "drink", textValue: "Drink", isDown: false),
+            menuCircleRed(
+                context: context,
+                pathImage: "dessert",
+                textValue: "Dessert",
+                isDown: false),
+            menuCircleRed(
+                context: context,
+                pathImage: "burger",
+                textValue: "Burger",
+                isDown: true),
+            menuCircleRed(
+                context: context,
+                pathImage: "chicken",
+                textValue: "Chicken",
+                isDown: true),
+            menuCircleRed(
+                context: context,
+                pathImage: "drink",
+                textValue: "Drink",
+                isDown: false),
           ],
         ),
       ],
