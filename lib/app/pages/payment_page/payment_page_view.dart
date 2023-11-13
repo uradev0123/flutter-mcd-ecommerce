@@ -47,7 +47,7 @@ class PaymentPageView extends StatelessWidget {
               ),
             ),
           ),
-          ContainerTotal(context: context, textValue: 'Order Now', route: '/', isOffNamed: true)
+          ContainerTotal(context: context, textValue: 'Order Now', route: '/payment-succesful', isOffNamed: true)
         ],
       ),
     );
