@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/signup_page/signup_page_view.dart';
 
-class loginPage2 extends StatefulWidget {
+class SignupPage2 extends StatefulWidget {
   @override
-  _LoginPage2State createState() => _LoginPage2State();
+  _SignupPage2State createState() => _SignupPage2State();
 }
 
-class _LoginPage2State extends State<loginPage2> {
+class _SignupPage2State extends State<SignupPage2> {
   bool _isPasswordVisible = false;
+  TextEditingController _namaController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -17,8 +19,24 @@ class _LoginPage2State extends State<loginPage2> {
       children: [
         SizedBox(height: 15),
         Container(
-          width: 300, 
-          height: 65, 
+          width: 300,
+          height: 65,
+          child: TextFormField(
+            controller: _emailController,
+            decoration: InputDecoration(
+              labelText: 'Nama',
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.yellow),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.yellow),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          width: 300,
+          height: 65,
           child: TextFormField(
             controller: _emailController,
             decoration: InputDecoration(
@@ -33,8 +51,8 @@ class _LoginPage2State extends State<loginPage2> {
           ),
         ),
         Container(
-          width: 300, 
-          height: 65, 
+          width: 300,
+          height: 65,
           child: TextFormField(
             obscureText: !_isPasswordVisible,
             controller: _passwordController,

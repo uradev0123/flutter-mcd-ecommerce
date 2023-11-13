@@ -13,7 +13,7 @@ class HomePageView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: backgroundPageColor,
+      backgroundColor: Color(0xFFf4f4f4),
       body: Container(
         width: double.infinity,
         child: SingleChildScrollView(

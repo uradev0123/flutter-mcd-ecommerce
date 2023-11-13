@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class loginPage3 extends StatelessWidget {
+class signupPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -9,7 +9,6 @@ class loginPage3 extends StatelessWidget {
         SizedBox(height: 15),
         ElevatedButton(
           onPressed: () {
-            // Implement login logic and navigate to homePage
             Navigator.pushReplacementNamed(context, '/homePage');
           },
           style: ElevatedButton.styleFrom(
@@ -17,18 +16,17 @@ class loginPage3 extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
           ),
           child: Text(
-            'Sign Up',
+            'Login',
             style: TextStyle(fontSize: 18),
           ),
         ),
         SizedBox(height: 15),
         GestureDetector(
           onTap: () {
-            // Implement navigation to SignUp page
-            Navigator.pushReplacementNamed(context, '/SignupPageView');
+            Navigator.pushReplacementNamed(context, '/SignupPage');
           },
           child: Text(
-            "Already have an account? Sign In now.",
+            "Don't have an account? Sign Up now.",
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
