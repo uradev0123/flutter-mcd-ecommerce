@@ -17,7 +17,7 @@ class PaymentSuccesfulPageView extends StatelessWidget {
     String totalPrice = cartController.formattedTotalPrice.value;
 
     return Scaffold(
-      backgroundColor: backgroundPageColor,
+      backgroundColor: whiteColor,
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: width * 0.05),
         child: Column(
