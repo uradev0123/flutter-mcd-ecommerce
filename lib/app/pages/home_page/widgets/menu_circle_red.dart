@@ -9,13 +9,14 @@ Widget menuCircleRed({required context, required String pathImage, required Stri
 
   return Container(
     width: width * 0.25,
-    height: isDown ? height * 0.08 : height * 0.125,
+    margin: isDown ? EdgeInsets.only(top: height * 0.05) : EdgeInsets.only(top: height * 0.02),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           width: width * 0.125,
-          height: height * 0.125,
+          height: width * 0.125,
           decoration: const BoxDecoration(
             color: secondaryColor,
             shape: BoxShape.circle,
@@ -27,6 +28,8 @@ Widget menuCircleRed({required context, required String pathImage, required Stri
             ),
           ),
         ),
+        SizedBox(height: height * 0.005),
+        Text(textValue, style: ts10SemiboldBlack),
       ],
     ),
   );
