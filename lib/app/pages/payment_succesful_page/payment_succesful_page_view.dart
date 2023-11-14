@@ -40,6 +40,7 @@ class PaymentSuccesfulPageView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Get.offAllNamed('/');
+                    cartController.clearSelectedProducts();
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: width * 0.04, vertical: height * 0.025),

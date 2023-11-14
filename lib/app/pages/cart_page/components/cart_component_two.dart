@@ -13,8 +13,6 @@ class CartComponentTwo extends StatelessWidget {
     final double width = mediaQuery.width;
     final double height = mediaQuery.height;
 
-    cartController.findAndAddSelectedProducts();
-
     return Obx(() => Container(
       width: double.infinity,
       margin: EdgeInsets.only(top: height * 0.01),
@@ -65,7 +63,6 @@ class CartComponentTwo extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () {
                             cartController.decrementProductQuantity(product);
-                            cartController.findAndAddSelectedProducts();
                             cartController.calculateSubTotalPrice();
                             cartController.calculateTotalPrice();
                           },

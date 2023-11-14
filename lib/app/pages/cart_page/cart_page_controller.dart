@@ -5,23 +5,22 @@ import 'package:intl/intl.dart';
 
 class CartPageController extends GetxController {
   final AllMenuController allMenuController = Get.put(AllMenuController());
-  RxList<String> selectedProductIds = <String>[].obs;
   RxList<Product> selectedProducts = <Product>[].obs;
   RxDouble subTotalPrice = 0.0.obs;
   RxDouble totalPrice = 0.0.obs;
   RxString formattedSubTotalPrice = ''.obs;
   RxString formattedTotalPrice = ''.obs;
 
-  void addToSelectedProducts(String productId) {
-    selectedProductIds.add(productId);
+  void addToSelectedProducts(Product product) {
+    selectedProducts.add(product);
   }
 
-  void removeFromSelectedProducts(String productId) {
-    selectedProductIds.remove(productId);
+  void removeFromSelectedProducts(Product product) {
+    selectedProducts.remove(product);
   }
 
-  bool isProductSelected(String productId) {
-    return selectedProductIds.contains(productId);
+  bool isProductSelected(Product product) {
+    return selectedProducts.contains(product);
   }
 
   void incrementProductQuantity(Product product) {
@@ -32,19 +31,7 @@ class CartPageController extends GetxController {
     if (product.quantity > 0) {
       product.quantity.value--;
       if (product.quantity.value == 0) {
-        removeFromSelectedProducts(product.id);
-      }
-    }
-  }
-
-  void findAndAddSelectedProducts() {
-    selectedProducts.clear();
-    for (String productId in selectedProductIds) {
-      Product? product = allMenuController.allMenu.firstWhere(
-            (element) => element.id == productId,
-      );
-      if (product.id.isNotEmpty) {
-        selectedProducts.add(product);
+        removeFromSelectedProducts(product);
       }
     }
   }
@@ -67,5 +54,9 @@ class CartPageController extends GetxController {
     double ongkir = 16000;
     totalPrice.value = subTotalPrice.value + ongkir;
     formattedTotalPrice.value = formatPrice(totalPrice.value);
+  }
+
+  void clearSelectedProducts() {
+    selectedProducts.clear();
   }
 }
