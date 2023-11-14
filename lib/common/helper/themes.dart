@@ -92,6 +92,14 @@ TextStyle ts14MediumGrey = GoogleFonts.poppins(
     )
 );
 
+TextStyle ts14MediumRed = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: secondaryColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14
+    )
+);
+
 TextStyle ts12MediumBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
