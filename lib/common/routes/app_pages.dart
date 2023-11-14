@@ -1,3 +1,7 @@
+import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/payment_page/payment_page_view.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/payment_succesful_page/payment_succesful_page_binding.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/payment_succesful_page/payment_succesful_page_view.dart';
 import 'package:get/get.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_binding.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_view.dart';
@@ -20,7 +24,6 @@ class AppPages {
   // static var routes;
 
   AppPages._();
-
   static const INITIAL = Routes.HOME_PAGE;
 
   static final routes = [
@@ -65,6 +68,18 @@ class AppPages {
       page: () => CartPageView(),
       binding: CartPageBinding(),
       transition: Transition.noTransition,
+    ),
+    GetPage(
+        name: _Paths.PAYMENT_PAGE,
+        page: () => PaymentPageView(),
+        binding: PaymentPageBinding(),
+        transition: Transition.noTransition
+    ),
+    GetPage(
+        name: _Paths.PAYMENT_SUCCESFUL_PAGE,
+        page: () => PaymentSuccesfulPageView(),
+        binding: PaymentSuccesfulPageBinding(),
+        transition: Transition.noTransition
     ),
   ];
 }

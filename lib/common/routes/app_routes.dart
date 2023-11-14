@@ -10,6 +10,8 @@ abstract class Routes {
   static const HISTORY_PAGE = _Paths.HISTORY_PAGE;
   static const PROFILE_PAGE = _Paths.PROFILE_PAGE;
   static const CART_PAGE = _Paths.CART_PAGE;
+  static const PAYMENT_PAGE = _Paths.PAYMENT_PAGE;
+  static const PAYMENT_SUCCESFUL_PAGE = _Paths.PAYMENT_SUCCESFUL_PAGE;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const HISTORY_PAGE = '/history';
   static const PROFILE_PAGE = '/profile';
   static const CART_PAGE = '/cart';
+  static const PAYMENT_PAGE = '/payment';
+  static const PAYMENT_SUCCESFUL_PAGE = '/payment-succesful';
 }

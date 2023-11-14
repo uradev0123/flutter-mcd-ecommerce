@@ -25,7 +25,6 @@ class HomePageView extends StatelessWidget {
               HomeComponentThree(),
               HomeComponentFour(),
               HomeComponentFive(),
-              SizedBox(height: 30),
               HomeComponentSix(),
             ],
           ),
