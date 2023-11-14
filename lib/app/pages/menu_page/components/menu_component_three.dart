@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/mock_data/controller/category_menu.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/widgets/switch_case_grid_view_product.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MenuComponentThree extends StatelessWidget {
-  final MenuPageController controller = Get.put(MenuPageController());
+  final MenuPageController menuPageController = Get.put(MenuPageController());
   final CategoryMenuController categoryMenuController = Get.put(CategoryMenuController());
 
 
@@ -17,6 +18,9 @@ class MenuComponentThree extends StatelessWidget {
     final double height = mediaQuery.height;
 
     return Obx(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        menuPageController.scrollTo(context: context, index: menuPageController.selectedCategoryIndex.value);
+      });
       return Column(
         children: [
           Container(
@@ -30,18 +34,20 @@ class MenuComponentThree extends StatelessWidget {
               ),
             ),
             child: ListView.builder(
+              controller: menuPageController.scrollController,
               itemCount: categoryMenuController.categoryMenu.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
                 var category = categoryMenuController.categoryMenu[index];
 
                 return Obx(() {
-                  bool isSelected = controller.selectedCategoryIndex.value == index;
+                  bool isSelected = menuPageController.selectedCategoryIndex.value == index;
                   return Column(
                     children: [
                       InkWell(
                         onTap: () {
-                          controller.selectedCategoryIndex.value = index;
+                          menuPageController.selectedCategoryIndex.value = index;
+                          menuPageController.scrollTo(context: context, index: index);
                         },
                         child: Container(
                           height: height * 0.05,
@@ -75,7 +81,7 @@ class MenuComponentThree extends StatelessWidget {
             ),
           ),
           SizedBox(height: height * 0.03),
-          controller.getMenuControllerWidget(context: context),
+          switchCaseGridViewProduct(context: context),
         ],
       );
     });
