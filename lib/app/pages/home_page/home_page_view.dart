@@ -4,6 +4,7 @@ import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_compon
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_one.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_three.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_two.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_six.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class HomePageView extends StatelessWidget {
@@ -24,6 +25,8 @@ class HomePageView extends StatelessWidget {
               HomeComponentThree(),
               HomeComponentFour(),
               HomeComponentFive(),
+              SizedBox(height: 30),
+              HomeComponentSix(),
             ],
           ),
         ),
