@@ -24,7 +24,7 @@ class CartComponentTwo extends StatelessWidget {
             formattedPrice = formattedPrice.replaceAll(",00", "");
 
             return Container(
-              height: height * 0.125,
+              height: height * 0.13,
               width: double.infinity,
               color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.01),
@@ -41,7 +41,7 @@ class CartComponentTwo extends StatelessWidget {
                       ),
                       SizedBox(width: width * 0.025),
                       Container(
-                        width: width * 0.3,
+                        width: width * 0.25,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +55,6 @@ class CartComponentTwo extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.all(width * 0.015),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,10 +72,12 @@ class CartComponentTwo extends StatelessWidget {
                           ),
                           child: Icon(Icons.remove, color: blackColor, size: 16),
                         ),
+
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: width * 0.001),
-                          child: Text(product.quantity.toString(), style: ts14MediumBlack),
+                          width: width * 0.06,
+                            child: Text(product.quantity.toString(), style: ts14MediumBlack, textAlign: TextAlign.center,)
                         ),
+
                         ElevatedButton(
                           onPressed: () {
                             cartController.incrementProductQuantity(product);
