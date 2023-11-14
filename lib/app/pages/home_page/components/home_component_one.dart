@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
@@ -51,18 +52,23 @@ class HomeComponentOne extends StatelessWidget {
               ],
             ),
             /// Icon Cart
-            Container(
-              width: width * 0.1,
-              height: width * 0.1,
-              decoration: const BoxDecoration(
-                color: whiteColor,
-                shape: BoxShape.circle,
+            InkWell(
+              onTap: () {
+                Get.toNamed('/cart');
+              },
+              child: Container(
+                width: width * 0.1,
+                height: width * 0.1,
+                decoration: const BoxDecoration(
+                  color: whiteColor,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.shopping_cart,
+                  color: blackColor,
+                ),
               ),
-              child: const Icon(
-                Icons.shopping_cart,
-                color: blackColor,
-              ),
-            ),
+            )
           ],
         ),
       ),

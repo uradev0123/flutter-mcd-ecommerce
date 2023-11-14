@@ -13,8 +13,9 @@ class HomeComponentSix extends StatelessWidget {
 
       return Column(
     children: [
+      SizedBox(height: height * 0.05),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: width * 0.05),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -22,9 +23,9 @@ class HomeComponentSix extends StatelessWidget {
           ],
         ),
       ),
-      SizedBox(height: 10),
+      SizedBox(height: height * 0.015),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: width * 0.05),
         child: StaggeredGrid.count(
           crossAxisCount: 3,
           mainAxisSpacing: 4,
@@ -62,6 +63,7 @@ class HomeComponentSix extends StatelessWidget {
                 child: Image.asset('assets/images/imgD.png', fit: BoxFit.fitWidth),
               ),
             ),
+            SizedBox(height: height * 0.05),
           ],
         ),
       ),
