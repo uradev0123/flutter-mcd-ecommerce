@@ -31,9 +31,10 @@ Widget radioButtonPayment({required context, required String pathImage, required
             value: value,
             groupValue: paymentPageController.orderType.value,
             activeColor: primaryColor,
-            onChanged: (val) {},
-          ),
-          )
+            onChanged: (val) {
+              paymentPageController.setOrderType(value);
+            },
+          ))
         ],
       ),
     ),
