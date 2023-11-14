@@ -18,13 +18,17 @@ class HomePageView extends StatelessWidget {
       body: Container(
         width: double.infinity,
         child: SingleChildScrollView(
-          child: Column(
+          child: Stack(
             children: [
-              HomeComponentOne(),
-              HomeComponentTwo(),
-              HomeComponentThree(),
-              HomeComponentFour(),
-              HomeComponentFive(),
+              Column(
+                children: [
+                  HomeComponentOne(),
+                  HomeComponentTwo(),
+                  HomeComponentThree(),
+                  HomeComponentFour(),
+                  HomeComponentFive(),
+                ],
+              ),
             ],
           ),
         ),

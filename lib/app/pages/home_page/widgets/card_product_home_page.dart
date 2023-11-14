@@ -13,7 +13,7 @@ Widget cardProductHomePage({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Obx(() => Container(
-        height: height * 0.295,
+        height: width * 0.58,
         margin: EdgeInsets.only(left: width * 0.05),
         child: ListView.builder(
           itemCount: controller.length,
