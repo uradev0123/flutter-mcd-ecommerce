@@ -31,7 +31,7 @@ Widget gridViewProduct({required context, required controller}) {
           formattedPrice = formattedPrice.replaceAll(",00", "");
 
           return Obx(() {
-            bool isSelected = cartController.isProductSelected(product.id);
+            bool isSelected = cartController.isProductSelected(product);
             return Container(
               decoration: BoxDecoration(
                 color: whiteColor,
@@ -86,8 +86,6 @@ Widget gridViewProduct({required context, required controller}) {
                               ElevatedButton(
                                 onPressed: () {
                                   cartController.decrementProductQuantity(product);
-                                  cartController.calculateSubTotalPrice();
-                                  cartController.calculateSubTotalPrice();
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -102,8 +100,6 @@ Widget gridViewProduct({required context, required controller}) {
                               ElevatedButton(
                                 onPressed: () {
                                   cartController.incrementProductQuantity(product);
-                                  cartController.calculateSubTotalPrice();
-                                  cartController.calculateSubTotalPrice();
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -120,10 +116,8 @@ Widget gridViewProduct({required context, required controller}) {
                           margin: EdgeInsets.all(width * 0.015),
                           child: ElevatedButton(
                             onPressed: () {
-                              cartController.addToSelectedProducts(product.id);
+                              cartController.addToSelectedProducts(product);
                               cartController.incrementProductQuantity(product);
-                              cartController.calculateSubTotalPrice();
-                              cartController.calculateSubTotalPrice();
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
