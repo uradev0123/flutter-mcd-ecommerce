@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/global_component/navbar.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_five.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_four.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/components/home_component_one.dart';
