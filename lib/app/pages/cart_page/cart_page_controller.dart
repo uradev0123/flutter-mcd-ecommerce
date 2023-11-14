@@ -58,5 +58,8 @@ class CartPageController extends GetxController {
 
   void clearSelectedProducts() {
     selectedProducts.clear();
+    for (Product product in allMenuController.allMenu) {
+      product.quantity.value = 0;
+    }
   }
 }
