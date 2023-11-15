@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfilePage2 extends StatelessWidget {
   @override
@@ -13,52 +14,30 @@ class ProfilePage2 extends StatelessWidget {
             style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 10),
-          Text(
-            "John",
-            style: TextStyle(color: Colors.grey),
+          FutureBuilder<String>(
+            future: getUserData('name'),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(
+                  snapshot.data!,
+                  style: TextStyle(color: Colors.grey),
+                );
+              } else {
+                return CircularProgressIndicator();
+              }
+            },
           ),
           SizedBox(height: 4),
           Divider(color: Colors.grey),
-          SizedBox(height: 12),
-          Text(
-            "Last Name",
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "Doe",
-            style: TextStyle(color: Colors.grey),
-          ),
-          SizedBox(height: 4),
-          Divider(color: Colors.grey),
-          SizedBox(height: 12),
-          Text(
-            "Phone",
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "+62123456789",
-            style: TextStyle(color: Colors.grey),
-          ),
-          SizedBox(height: 4),
-          Divider(color: Colors.grey),
-          SizedBox(height: 12),
-          Text(
-            "Email",
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "JohnDoe@gmail.com",
-            style: TextStyle(color: Colors.grey),
-          ),
-          SizedBox(height: 4),
-          Divider(color: Colors.grey),
-          SizedBox(height: 15),
           // Add other profile information here
         ],
       ),
     );
+  }
+
+  // Function to get user data from shared preferences
+  Future<String> getUserData(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(key) ?? '';
   }
 }
