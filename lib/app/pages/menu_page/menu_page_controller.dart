@@ -8,11 +8,13 @@ class MenuPageController extends GetxController {
   void scrollTo({required context,  required int index}) {
     final double width = MediaQuery.of(context).size.width;
     double scrollToPosition = index * (width * 0.25);
-    scrollController.animateTo(
-      scrollToPosition,
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
+    if (index >= 3 && index <= 5) {
+      scrollController.animateTo(
+        scrollToPosition,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 }
 
