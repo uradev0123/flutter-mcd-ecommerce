@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,7 +51,7 @@ class CartComponentOne extends StatelessWidget {
           ),
           SizedBox(height: height * 0.015),
           Container(
-            width: width * 0.175,
+            width: width * 0.2,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(width: 1, color: Color(0xFFD9D9D9)),
@@ -62,7 +63,7 @@ class CartComponentOne extends StatelessWidget {
               children: [
                 SvgPicture.asset('assets/icons/icon_add_notes.svg'),
                 SizedBox(width: width * 0.01),
-                Text('Notes', style: ts12SemiboldBlack),
+                AutoSizeText('Notes', style: ts12SemiboldBlack, group: AutoSizeGroup(),),
               ],
             )
           ),
