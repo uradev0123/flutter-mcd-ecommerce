@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/menu_circle_red.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
+import 'package:get/get.dart';
 
 class HomeComponentThree extends StatelessWidget {
-  const HomeComponentThree({Key? key}) : super(key: key);
+  final MenuPageController menuPageController = Get.put(MenuPageController());
 
   @override
   Widget build(BuildContext context) {
@@ -27,26 +29,54 @@ class HomeComponentThree extends StatelessWidget {
         ),
         Row(
           children: [
-            menuCircleRed(
+            InkWell(
+              onTap: () {
+                Get.toNamed('/menu');
+                menuPageController.selectedCategoryIndex.value = 4;
+              },
+              child: menuCircleRed(
                 context: context,
                 pathImage: "dessert",
                 textValue: "Dessert",
-                isDown: false),
-            menuCircleRed(
+                isDown: false,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Get.toNamed('/menu');
+                menuPageController.selectedCategoryIndex.value = 1;
+              },
+              child: menuCircleRed(
                 context: context,
                 pathImage: "burger",
                 textValue: "Burger",
-                isDown: true),
-            menuCircleRed(
+                isDown: true,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Get.toNamed('/menu');
+                menuPageController.selectedCategoryIndex.value = 2;
+              },
+              child: menuCircleRed(
                 context: context,
                 pathImage: "chicken",
                 textValue: "Chicken",
-                isDown: true),
-            menuCircleRed(
+                isDown: true,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Get.toNamed('/menu');
+                menuPageController.selectedCategoryIndex.value = 3;
+              },
+              child: menuCircleRed(
                 context: context,
                 pathImage: "drink",
                 textValue: "Drink",
-                isDown: false),
+                isDown: false,
+              ),
+            ),
           ],
         ),
       ],

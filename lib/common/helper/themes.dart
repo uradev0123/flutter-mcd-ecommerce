@@ -92,6 +92,14 @@ TextStyle ts14MediumGrey = GoogleFonts.poppins(
     )
 );
 
+TextStyle ts14MediumRed = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+        color: secondaryColor,
+        fontWeight: FontWeight.w500,
+        fontSize: 14
+    )
+);
+
 TextStyle ts12MediumBlack = GoogleFonts.poppins(
     textStyle: const TextStyle(
         color: blackColor,
@@ -113,6 +121,14 @@ TextStyle ts12SemiboldGrey = GoogleFonts.poppins(
         color: greyColor,
         fontWeight: FontWeight.w600,
         fontSize: 12
+    )
+);
+
+TextStyle ts12MediumGrey = GoogleFonts.poppins(
+    textStyle: const TextStyle(
+      color: greyColor,
+      fontWeight: FontWeight.w500,
+      fontSize: 12,
     )
 );
 
@@ -140,7 +156,6 @@ TextStyle ts10SemiboldGrey = GoogleFonts.poppins(
         fontSize: 10
     )
 );
-
 TextStyle ts10MediumGrey = GoogleFonts.poppins(
     textStyle: const TextStyle(
       color: greyColor,
@@ -148,7 +163,3 @@ TextStyle ts10MediumGrey = GoogleFonts.poppins(
       fontSize: 10,
     )
 );
-
-
-
-

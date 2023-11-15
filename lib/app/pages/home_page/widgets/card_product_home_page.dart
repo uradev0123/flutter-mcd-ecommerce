@@ -13,7 +13,7 @@ Widget cardProductHomePage({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Obx(() => Container(
-        height: height * 0.295,
+        height: width * 0.58,
         margin: EdgeInsets.only(left: width * 0.05),
         child: ListView.builder(
           itemCount: controller.length,
@@ -62,15 +62,14 @@ Widget cardProductHomePage({required context, required controller}) {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: height * 0.045,
+                                height: height * 0.048,
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
-                                  child: Text(product.name,
-                                      style: ts10MediumBlack),
+                                  child: Text(product.name, style: ts12MediumBlack, overflow: TextOverflow.ellipsis, maxLines: 2,),
                                 ),
                               ),
                               SizedBox(height: height * 0.005),
-                              Text(formattedPrice, style: ts10MediumGrey),
+                              Text(formattedPrice, style: ts12MediumGrey),
                             ],
                           ),
                         ),
@@ -78,9 +77,9 @@ Widget cardProductHomePage({required context, required controller}) {
                     ),
                     isSelected
                         ? Container(
-                            margin: EdgeInsets.all(width * 0.015),
+                            margin: EdgeInsets.symmetric(vertical: width * 0.015),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 ElevatedButton(
@@ -95,8 +94,7 @@ Widget cardProductHomePage({required context, required controller}) {
                                   child: Icon(Icons.remove, color: blackColor, size: 16),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.symmetric(horizontal: width * 0.001),
-                                  child: Text(product.quantity.toString(), style: ts14MediumBlack),
+                                  child: Text(product.quantity.toString(), style: ts14MediumBlack, textAlign: TextAlign.center,),
                                 ),
                                 ElevatedButton(
                                   onPressed: () {
