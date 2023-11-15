@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_controller.dart';
@@ -13,17 +14,15 @@ Widget gridViewProduct({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Container(
-      height: height,
-      margin: EdgeInsets.symmetric(
-        horizontal: width * 0.05,
-      ),
+      height: height * 0.63,
+      margin: EdgeInsets.only(left: width * 0.05, right: width * 0.05, bottom: height * 0.1),
       child: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: width * 0.45,
-            mainAxisExtent: height * 0.33,
+            mainAxisExtent: height * 0.34,
             childAspectRatio: 1 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
+            crossAxisSpacing: width * 0.04,
+            mainAxisSpacing: width * 0.03),
         children: List.generate(controller.length, (index) {
           var product = controller[index];
           var formattedPrice =
@@ -33,6 +32,7 @@ Widget gridViewProduct({required context, required controller}) {
           return Obx(() {
             bool isSelected = cartController.isProductSelected(product);
             return Container(
+              margin: EdgeInsets.only(bottom: height * 0.01),
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(10),
@@ -57,13 +57,13 @@ Widget gridViewProduct({required context, required controller}) {
                       Image.asset(product.image, fit: BoxFit.fitHeight),
                       SizedBox(height: height * 0.01),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.02),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              height: height * 0.055,
+                              height: width * 0.11,
                               child: Align(
                                 alignment: Alignment.bottomLeft,
                                 child:
@@ -89,6 +89,7 @@ Widget gridViewProduct({required context, required controller}) {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
+                                  minimumSize: Size(width * 0.08, width * 0.08),
                                   backgroundColor: primaryColor,
                                 ),
                                 child: Icon(Icons.remove, color: blackColor),
@@ -100,6 +101,7 @@ Widget gridViewProduct({required context, required controller}) {
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
+                                  minimumSize: Size(width * 0.08, width * 0.08),
                                   backgroundColor: primaryColor,
                                 ),
                                 child: Icon(Icons.add, color: blackColor),
@@ -110,7 +112,7 @@ Widget gridViewProduct({required context, required controller}) {
                       : Container(
                           height: height * 0.035,
                           width: double.infinity,
-                          margin: EdgeInsets.all(width * 0.015),
+                          margin: EdgeInsets.symmetric(horizontal: width * 0.015, vertical: height * 0.008),
                           child: ElevatedButton(
                             onPressed: () {
                               cartController.addToSelectedProducts(product);

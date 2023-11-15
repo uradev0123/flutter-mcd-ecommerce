@@ -13,6 +13,7 @@ dependencies:
   intl: ^0.18.1
   get: 4.6.5
   persistent_bottom_nav_bar: ^5.0.2
+  auto_size_text: ^3.0.0
   flutter:
     sdk: flutter
   shared_preferences: ^2.0.12

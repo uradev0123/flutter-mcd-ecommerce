@@ -13,7 +13,7 @@ Widget cardProductHomePage({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Obx(() => Container(
-        height: width * 0.58,
+        height: height * 0.3,
         margin: EdgeInsets.only(left: width * 0.05),
         child: ListView.builder(
           itemCount: controller.length,
@@ -62,7 +62,7 @@ Widget cardProductHomePage({required context, required controller}) {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: height * 0.048,
+                                height: width * 0.1,
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(product.name, style: ts12MediumBlack, overflow: TextOverflow.ellipsis, maxLines: 2,),

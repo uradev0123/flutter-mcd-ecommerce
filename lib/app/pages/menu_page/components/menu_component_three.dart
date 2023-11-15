@@ -24,7 +24,7 @@ class MenuComponentThree extends StatelessWidget {
       return Column(
         children: [
           Container(
-            height: height * 0.0515,
+            height: height * 0.052,
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -80,7 +80,7 @@ class MenuComponentThree extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: height * 0.03),
+          SizedBox(height: height * 0.001),
           switchCaseGridViewProduct(context: context),
         ],
       );
