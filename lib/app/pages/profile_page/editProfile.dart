@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -55,7 +56,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   }
 
   // Function to save profile changes using shared preferences
-  void saveProfileChanges() {
+  void saveProfileChanges() async {
     // Get values from text controllers
     String firstName = _firstNameController.text;
     String lastName = _lastNameController.text;
@@ -63,13 +64,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
     String email = _emailController.text;
 
     // Save values to shared preferences
-    // You can use any shared preferences package here
-    // For example, using the shared_preferences package:
-    // SharedPreferences prefs = await SharedPreferences.getInstance();
-    // prefs.setString("firstName", firstName);
-    // prefs.setString("lastName", lastName);
-    // prefs.setString("phone", phone);
-    // prefs.setString("email", email);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("name", "$firstName $lastName");
+    prefs.setString("phone", phone);
+    prefs.setString("email", email);
 
     // After saving, you can navigate back to the profile page
     Navigator.pop(context);

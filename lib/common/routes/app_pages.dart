@@ -24,7 +24,7 @@ class AppPages {
   // static var routes;
 
   AppPages._();
-  static const INITIAL = Routes.HOME_PAGE;
+  static const INITIAL = Routes.SIGNUP_PAGE;
 
   static final routes = [
     GetPage(
