@@ -14,12 +14,12 @@ Widget gridViewProduct({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Container(
-      height: height * 0.63,
+      height: height * 0.6,
       margin: EdgeInsets.only(left: width * 0.05, right: width * 0.05, bottom: height * 0.1),
       child: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: width * 0.45,
-            mainAxisExtent: height * 0.34,
+            mainAxisExtent: height * 0.39,
             childAspectRatio: 1 / 2,
             crossAxisSpacing: width * 0.04,
             mainAxisSpacing: width * 0.03),
@@ -57,18 +57,15 @@ Widget gridViewProduct({required context, required controller}) {
                       Image.asset(product.image, fit: BoxFit.fitHeight),
                       SizedBox(height: height * 0.01),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.015),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: width * 0.11,
-                              child: Align(
-                                alignment: Alignment.bottomLeft,
-                                child:
-                                    Text(product.name, style: ts14MediumBlack),
-                              ),
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child:
+                                  Text(product.name, style: ts14MediumBlack),
                             ),
                             SizedBox(height: height * 0.005),
                             Text(formattedPrice, style: ts14MediumGrey),
@@ -79,7 +76,7 @@ Widget gridViewProduct({required context, required controller}) {
                   ),
                   isSelected
                       ? Container(
-                        margin: EdgeInsets.all(width * 0.015),
+                        margin: EdgeInsets.symmetric(horizontal: width * 0.015),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -110,9 +107,9 @@ Widget gridViewProduct({required context, required controller}) {
                           ),
                       )
                       : Container(
-                          height: height * 0.035,
+                          height: height * 0.04,
                           width: double.infinity,
-                          margin: EdgeInsets.symmetric(horizontal: width * 0.015, vertical: height * 0.008),
+                          margin: EdgeInsets.symmetric(horizontal: width * 0.015, vertical: height * 0.01),
                           child: ElevatedButton(
                             onPressed: () {
                               cartController.addToSelectedProducts(product);
