@@ -57,7 +57,10 @@ class HomeComponentFive extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(top: height * 0.02),
-                child: SvgPicture.asset("assets/images/wave_breakfast.svg")
+                child: SvgPicture.asset(
+                  "assets/images/wave_breakfast.svg",
+                  height: height * 0.3,
+                ),
             ),
             cardProductHomePage(context: context, controller: breakfastController.breakfast),
           ],

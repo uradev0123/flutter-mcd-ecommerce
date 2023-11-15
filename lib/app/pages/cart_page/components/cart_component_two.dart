@@ -24,7 +24,7 @@ class CartComponentTwo extends StatelessWidget {
             formattedPrice = formattedPrice.replaceAll(",00", "");
 
             return Container(
-              height: height * 0.13,
+              height: height * 0.15,
               width: double.infinity,
               color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.01),
@@ -36,12 +36,12 @@ class CartComponentTwo extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        height: height * 0.8,
-                        child: Image.asset(product.image, fit: BoxFit.fitHeight),
+                        width: width * 0.25,
+                        child: Image.asset(product.image, fit: BoxFit.fitWidth),
                       ),
                       SizedBox(width: width * 0.025),
                       Container(
-                        width: width * 0.25,
+                        width: width * 0.28,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,6 +55,7 @@ class CartComponentTwo extends StatelessWidget {
                     ],
                   ),
                   Container(
+
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +68,7 @@ class CartComponentTwo extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
-                            minimumSize: Size(width * 0.08, width * 0.08),
+                            minimumSize: Size(width * 0.07, width * 0.07),
                             backgroundColor: primaryColor,
                           ),
                           child: Icon(Icons.remove, color: blackColor, size: 16),
@@ -75,7 +76,7 @@ class CartComponentTwo extends StatelessWidget {
 
                         Container(
                           width: width * 0.06,
-                            child: Text(product.quantity.toString(), style: ts14MediumBlack, textAlign: TextAlign.center,)
+                            child: Text(product.quantity.toString(), style: ts12MediumBlack, textAlign: TextAlign.center,)
                         ),
 
                         ElevatedButton(
@@ -86,7 +87,7 @@ class CartComponentTwo extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             shape: CircleBorder(),
-                            minimumSize: Size(width * 0.08, width * 0.08),
+                            minimumSize: Size(width * 0.07, width * 0.07),
                             backgroundColor: primaryColor,
                           ),
                           child: Icon(Icons.add, color: blackColor, size: 16),

@@ -13,7 +13,7 @@ Widget cardProductHomePage({required context, required controller}) {
   final double height = mediaQuery.height;
 
   return Obx(() => Container(
-        height: height * 0.3,
+        height: height * 0.35,
         margin: EdgeInsets.only(left: width * 0.05),
         child: ListView.builder(
           itemCount: controller.length,
@@ -28,9 +28,8 @@ Widget cardProductHomePage({required context, required controller}) {
             return Obx(() {
               bool isSelected = cartController.isProductSelected(product);
               return Container(
-                width: width * 0.35,
-                margin: EdgeInsets.only(
-                    right: width * 0.035, bottom: height * 0.0075),
+                width: width * 0.375,
+                margin: EdgeInsets.only(right: width * 0.035, bottom: height * 0.0075),
                 decoration: BoxDecoration(
                   color: whiteColor,
                   borderRadius: BorderRadius.circular(10),
@@ -55,8 +54,7 @@ Widget cardProductHomePage({required context, required controller}) {
                         Image.asset(product.image, fit: BoxFit.fitHeight),
                         SizedBox(height: height * 0.01),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: width * 0.03),
+                          padding: EdgeInsets.symmetric(horizontal: width * 0.03),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +63,7 @@ Widget cardProductHomePage({required context, required controller}) {
                                 height: width * 0.1,
                                 child: Align(
                                   alignment: Alignment.bottomLeft,
-                                  child: Text(product.name, style: ts12MediumBlack, overflow: TextOverflow.ellipsis, maxLines: 2,),
+                                  child: Text(product.name, style: ts12MediumBlack, overflow: TextOverflow.ellipsis, maxLines: 2),
                                 ),
                               ),
                               SizedBox(height: height * 0.005),
@@ -77,7 +75,7 @@ Widget cardProductHomePage({required context, required controller}) {
                     ),
                     isSelected
                         ? Container(
-                            margin: EdgeInsets.symmetric(vertical: width * 0.015),
+                            margin: EdgeInsets.symmetric(horizontal: width * 0.005),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,21 +86,21 @@ Widget cardProductHomePage({required context, required controller}) {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     shape: CircleBorder(),
-                                    minimumSize: Size(width * 0.08, width * 0.08),
+                                    minimumSize: Size(width * 0.07, width * 0.07),
                                     backgroundColor: primaryColor,
                                   ),
                                   child: Icon(Icons.remove, color: blackColor, size: 16),
                                 ),
-                                Container(
-                                  child: Text(product.quantity.toString(), style: ts14MediumBlack, textAlign: TextAlign.center,),
-                                ),
+
+                                Text(product.quantity.toString(), style: ts14MediumBlack, textAlign: TextAlign.center,),
+
                                 ElevatedButton(
                                   onPressed: () {
                                     cartController.incrementProductQuantity(product);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     shape: CircleBorder(),
-                                    minimumSize: Size(width * 0.08, width * 0.08),
+                                    minimumSize: Size(width * 0.07, width * 0.07),
                                     backgroundColor: primaryColor,
                                   ),
                                   child: Icon(Icons.add, color: blackColor, size: 16),
@@ -111,9 +109,9 @@ Widget cardProductHomePage({required context, required controller}) {
                             ),
                           )
                         : Container(
-                            height: height * 0.035,
+                            height: height * 0.038,
                             width: double.infinity,
-                            margin: EdgeInsets.all(width * 0.015),
+                            margin: EdgeInsets.symmetric(horizontal: width * 0.005, vertical: height * 0.008),
                             child: ElevatedButton(
                               onPressed: () {
                                 cartController.addToSelectedProducts(product);

@@ -46,7 +46,7 @@ Widget ContainerTotal({required context, required String textValue, required Str
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
-                      horizontal: width * 0.04, vertical: height * 0.02),
+                      horizontal: width * 0.04, vertical: height * 0.015),
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
