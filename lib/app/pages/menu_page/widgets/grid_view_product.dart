@@ -81,7 +81,7 @@ Widget gridViewProduct({required context, required controller}) {
                       ? Container(
                         margin: EdgeInsets.all(width * 0.015),
                         child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
                                 onPressed: () {
@@ -93,10 +93,7 @@ Widget gridViewProduct({required context, required controller}) {
                                 ),
                                 child: Icon(Icons.remove, color: blackColor),
                               ),
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: width * 0.005),
-                                child: Text(product.quantity.toString(), style: ts14MediumBlack),
-                              ),
+                              Text(product.quantity.toString(), style: ts14MediumBlack),
                               ElevatedButton(
                                 onPressed: () {
                                   cartController.incrementProductQuantity(product);
