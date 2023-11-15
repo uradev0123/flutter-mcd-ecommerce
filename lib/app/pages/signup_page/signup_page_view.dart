@@ -18,7 +18,7 @@ class SignUpPage extends StatelessWidget {
             children: [
               signupPage1(),
               SignupPage2(),
-              signupPage3(),
+              signupPage3()
             ],
           ),
         ),

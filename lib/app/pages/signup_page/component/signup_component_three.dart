@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class signupPage3 extends StatelessWidget {
   @override
@@ -9,24 +10,24 @@ class signupPage3 extends StatelessWidget {
         SizedBox(height: 15),
         ElevatedButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/homePage');
+            Get.offNamed("/");
           },
           style: ElevatedButton.styleFrom(
             primary: Colors.red,
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
           ),
           child: Text(
-            'Login',
+            'SignUp',
             style: TextStyle(fontSize: 18),
           ),
         ),
         SizedBox(height: 15),
         GestureDetector(
           onTap: () {
-            Navigator.pushReplacementNamed(context, '/SignupPage');
+            Get.offNamed("login");
           },
           child: Text(
-            "Don't have an account? Sign Up now.",
+            "Already have an account? Sign In now.",
             style: TextStyle(
               color: Colors.black,
               fontSize: 16,
