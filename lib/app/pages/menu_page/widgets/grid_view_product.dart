@@ -2,20 +2,25 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_controller.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 Widget gridViewProduct({required context, required controller}) {
   final CartPageController cartController = Get.put(CartPageController());
+  final HomePageController homePageController = Get.put(HomePageController());
 
   final Size mediaQuery = MediaQuery.of(context).size;
   final double width = mediaQuery.width;
   final double height = mediaQuery.height;
 
   return Container(
-      height: height * 0.6,
-      margin: EdgeInsets.only(left: width * 0.05, right: width * 0.05, bottom: height * 0.1),
+      height: homePageController.isRoutingFromHomePage.value
+          ? height
+          : height * 0.6,
+      margin: EdgeInsets.only(
+          left: width * 0.05, right: width * 0.05, bottom: height * 0.1),
       child: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: width * 0.45,
@@ -25,8 +30,7 @@ Widget gridViewProduct({required context, required controller}) {
             mainAxisSpacing: width * 0.03),
         children: List.generate(controller.length, (index) {
           var product = controller[index];
-          var formattedPrice =
-          NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ').format(product.price);
+          var formattedPrice = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ').format(product.price);
           formattedPrice = formattedPrice.replaceAll(",00", "");
 
           return Obx(() {
@@ -64,8 +68,7 @@ Widget gridViewProduct({required context, required controller}) {
                           children: [
                             Align(
                               alignment: Alignment.bottomLeft,
-                              child:
-                                  Text(product.name, style: ts14MediumBlack),
+                              child: Text(product.name, style: ts14MediumBlack),
                             ),
                             SizedBox(height: height * 0.005),
                             Text(formattedPrice, style: ts14MediumGrey),
@@ -76,13 +79,14 @@ Widget gridViewProduct({required context, required controller}) {
                   ),
                   isSelected
                       ? Container(
-                        margin: EdgeInsets.symmetric(horizontal: width * 0.015),
-                        child: Row(
+                          margin: EdgeInsets.symmetric(horizontal: width * 0.015),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ElevatedButton(
                                 onPressed: () {
-                                  cartController.decrementProductQuantity(product);
+                                  cartController
+                                      .decrementProductQuantity(product);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -91,10 +95,12 @@ Widget gridViewProduct({required context, required controller}) {
                                 ),
                                 child: Icon(Icons.remove, color: blackColor),
                               ),
-                              Text(product.quantity.toString(), style: ts14MediumBlack),
+                              Text(product.quantity.toString(),
+                                  style: ts14MediumBlack),
                               ElevatedButton(
                                 onPressed: () {
-                                  cartController.incrementProductQuantity(product);
+                                  cartController
+                                      .incrementProductQuantity(product);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   shape: CircleBorder(),
@@ -105,11 +111,13 @@ Widget gridViewProduct({required context, required controller}) {
                               ),
                             ],
                           ),
-                      )
+                        )
                       : Container(
                           height: height * 0.04,
                           width: double.infinity,
-                          margin: EdgeInsets.symmetric(horizontal: width * 0.015, vertical: height * 0.01),
+                          margin: EdgeInsets.symmetric(
+                              horizontal: width * 0.015,
+                              vertical: height * 0.01),
                           child: ElevatedButton(
                             onPressed: () {
                               cartController.addToSelectedProducts(product);

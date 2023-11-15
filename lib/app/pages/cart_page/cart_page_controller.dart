@@ -10,6 +10,11 @@ class CartPageController extends GetxController {
   RxDouble totalPrice = 0.0.obs;
   RxString formattedSubTotalPrice = ''.obs;
   RxString formattedTotalPrice = ''.obs;
+  RxBool isSelectedProductEmpty = false.obs;
+
+  void checkIsProductEmpty() {
+    isSelectedProductEmpty.value = selectedProducts.isEmpty;
+  }
 
   void addToSelectedProducts(Product product) {
     selectedProducts.add(product);
@@ -32,6 +37,7 @@ class CartPageController extends GetxController {
       product.quantity.value--;
       if (product.quantity.value == 0) {
         removeFromSelectedProducts(product);
+        checkIsProductEmpty();
       }
     }
   }
@@ -61,5 +67,6 @@ class CartPageController extends GetxController {
     for (Product product in allMenuController.allMenu) {
       product.quantity.value = 0;
     }
+    checkIsProductEmpty();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/menu_circle_red.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
@@ -6,6 +7,7 @@ import 'package:get/get.dart';
 
 class HomeComponentThree extends StatelessWidget {
   final MenuPageController menuPageController = Get.put(MenuPageController());
+  final HomePageController homePageController = Get.put(HomePageController());
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class HomeComponentThree extends StatelessWidget {
               onTap: () {
                 Get.toNamed('/menu');
                 menuPageController.selectedCategoryIndex.value = 4;
+                homePageController.isRoutingFromHomePage.value = true;
               },
               child: menuCircleRed(
                 context: context,
@@ -45,6 +48,7 @@ class HomeComponentThree extends StatelessWidget {
               onTap: () {
                 Get.toNamed('/menu');
                 menuPageController.selectedCategoryIndex.value = 1;
+                homePageController.isRoutingFromHomePage.value = true;
               },
               child: menuCircleRed(
                 context: context,
@@ -57,6 +61,7 @@ class HomeComponentThree extends StatelessWidget {
               onTap: () {
                 Get.toNamed('/menu');
                 menuPageController.selectedCategoryIndex.value = 2;
+                homePageController.isRoutingFromHomePage.value = true;
               },
               child: menuCircleRed(
                 context: context,
@@ -69,6 +74,7 @@ class HomeComponentThree extends StatelessWidget {
               onTap: () {
                 Get.toNamed('/menu');
                 menuPageController.selectedCategoryIndex.value = 3;
+                homePageController.isRoutingFromHomePage.value = true;
               },
               child: menuCircleRed(
                 context: context,
