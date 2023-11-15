@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 
 class MenuComponentOne extends StatelessWidget {
-  const MenuComponentOne({Key? key}) : super(key: key);
+  final HomePageController homePageController = Get.put(HomePageController());
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,9 @@ class MenuComponentOne extends StatelessWidget {
       elevation: 2,
       toolbarHeight: height * 0.1,
       title: Container(
-        padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+        padding: homePageController.isRoutingFromHomePage.value
+            ? EdgeInsets.zero
+            : EdgeInsets.symmetric(horizontal: width * 0.01),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -48,6 +50,7 @@ class MenuComponentOne extends StatelessWidget {
                 ),
               ],
             ),
+
             /// Icon Cart
             InkWell(
               onTap: () {
