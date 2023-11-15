@@ -13,9 +13,9 @@ class CartPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size mediaQuery = MediaQuery.of(context).size;
-    final double width = mediaQuery.width;
     final double height = mediaQuery.height;
 
+    cartController.checkIsProductEmpty();
     cartController.calculateSubTotalPrice();
     cartController.calculateTotalPrice();
 
@@ -26,24 +26,37 @@ class CartPageView extends StatelessWidget {
         toolbarHeight: height * 0.09,
         title: Text('Cart', style: ts18SemiboldBlack),
       ),
-      body: Stack(
-        children: [
-          Container(
-            height: height,
-            width: double.infinity,
-            child: SingleChildScrollView(
-              child: Column(
+      body: Obx(() {
+        return cartController.isSelectedProductEmpty.value
+            ? Center(
+                child: Text(
+                  'Your cart is empty.',
+                  style: ts18SemiboldBlack,
+                ),
+              )
+            : Stack(
                 children: [
-                  CartComponentOne(),
-                  CartComponentTwo(),
-                  CartComponentThree(),
+                  Container(
+                    height: height,
+                    width: double.infinity,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          CartComponentOne(),
+                          CartComponentTwo(),
+                          CartComponentThree(),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ContainerTotal(
+                      context: context,
+                      textValue: 'Checkout',
+                      route: '/payment',
+                      isOffNamed: false),
                 ],
-              ),
-            ),
-          ),
-          ContainerTotal(context: context, textValue: 'Checkout', route: '/payment', isOffNamed: false)
-        ],
-      ),
+              );
+      }),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/menu_page/menu_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/common/helper/themes.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_mcd_ecommerce/app/pages/home_page/widgets/card_product_h
 class HomeComponentFive extends StatelessWidget {
   final BreakfastController breakfastController = Get.put(BreakfastController());
   final MenuPageController menuPageController = Get.put(MenuPageController());
+  final HomePageController homePageController = Get.put(HomePageController());
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class HomeComponentFive extends StatelessWidget {
                   onTap: () {
                     Get.toNamed('/menu');
                     menuPageController.selectedCategoryIndex.value = 5;
+                    homePageController.isRoutingFromHomePage.value = true;
                   },
                   child: Text('See More', style: ts14MediumRed)
               ),
