@@ -16,6 +16,15 @@ class MenuComponentOne extends StatelessWidget {
       backgroundColor: whiteColor,
       elevation: 2,
       toolbarHeight: height * 0.1,
+      leading: homePageController.isRoutingFromHomePage.value
+          ? IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Get.back();
+                homePageController.isRoutingFromHomePage.value = false;
+              },
+            )
+          : null,
       title: Container(
         padding: homePageController.isRoutingFromHomePage.value
             ? EdgeInsets.zero
@@ -45,7 +54,10 @@ class MenuComponentOne extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("McDonald's Kaliurang", style: ts16SemiboldBlack),
-                    Text("Kota Yogyakarta", style: ts12MediumBlack,)
+                    Text(
+                      "Kota Yogyakarta",
+                      style: ts12MediumBlack,
+                    )
                   ],
                 ),
               ],
