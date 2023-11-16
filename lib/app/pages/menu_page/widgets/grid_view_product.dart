@@ -1,5 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/cart_page/cart_page_controller.dart';
 import 'package:flutter_mcd_ecommerce/app/pages/home_page/home_page_controller.dart';
@@ -17,7 +15,7 @@ Widget gridViewProduct({required context, required controller}) {
 
   return Container(
       height: homePageController.isRoutingFromHomePage.value
-          ? height
+          ? height * 0.69
           : height * 0.6,
       margin: EdgeInsets.only(
           left: width * 0.05, right: width * 0.05, bottom: height * 0.1),
